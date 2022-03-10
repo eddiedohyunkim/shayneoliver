@@ -1,0 +1,313 @@
+<!DOCTYPE>
+<style>													
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed, 
+			figure, figcaption, footer, header, hgroup, 
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+			html,body{margin:0px; padding:0px; position: fixed; width:100vw; height:100vh;}
+	@font-face{
+  		font-family: "HelveticaNeue-CondensedBold";
+		src:url('https://static1.squarespace.com/static/61687204ef3b4832a6d15935/t/61c3bbcd70a5ef44633df058/1640217549766/helvetica_condensed.ttf');
+	}
+	.logo, .glitch{
+		font-family: "HelveticaNeue-CondensedBold";
+		font-size:17.5vw;
+		/*background-color: green;*/
+	}
+	ul{
+		display: inline-block;
+		list-style-type: none;
+        margin: 0;
+        padding: 0;
+        /* For IE, the outcast */
+        zoom:1;
+	}
+	li {
+  		float: left;
+	}
+	li a {
+		display: block;
+		text-decoration: none;
+
+	}
+	.glitch{
+		/*background-color: green;*/
+		height: 12.6vw;
+	}
+	.sensor{
+		/*outline: 1px dashed red;*/
+  		/*outline-offset: -1px;*/
+		height: 12.6vw;
+	}
+
+</style>
+<body >
+	<div id='logo-container'>
+		<div id='logo-group'>
+			<ul>
+				<li><a class='logo' id='s'>S</a></li>
+				<li><a class='logo' id='h'>H</a></li>
+				<li><a class='logo' id='a'>A</a></li>
+				<li><a class='logo' id='y'>Y</a></li>
+				<li><a class='logo' id='n'>N</a></li>
+				<li><a class='logo' id='e'>E</a></li>
+				<li><a class='logo' id='o'>O</a></li>
+				<li><a class='logo' id='l'>L</a></li>
+				<li><a class='logo' id='i'>I</a></li>
+				<li><a class='logo' id='v'>V</a></li>
+				<li><a class='logo' id='ee'>E</a></li>
+				<li><a class='logo' id='r'>R</a></li>										
+			</ul>
+		</div>
+		<div id='glitch-group'>
+			<ul id = 'glitch-ul'>
+				<li><a class='glitch' id='sglitch'></a></li>
+				<li><a class='glitch' id='hglitch'></a></li>
+				<li><a class='glitch' id='aglitch'></a></li>
+				<li><a class='glitch' id='yglitch'></a></li>
+				<li><a class='glitch' id='nglitch'></a></li>
+				<li><a class='glitch' id='eglitch'></a></li>
+				<li><a class='glitch' id='oglitch'></a></li>
+				<li><a class='glitch' id='lglitch'></a></li>
+				<li><a class='glitch' id='iglitch'></a></li>
+				<li><a class='glitch' id='vglitch'></a></li>
+				<li><a class='glitch' id='eeglitch'></a></li>
+				<li><a class='glitch' id='rglitch'></a></li>										
+			</ul>
+		</div>
+		<div id='glitch-group2'>
+			<ul id = 'glitch-ul2'>
+				<li><a class='glitch' id='sglitch2'></a></li>
+				<li><a class='glitch' id='hglitch2'></a></li>
+				<li><a class='glitch' id='aglitch2'></a></li>
+				<li><a class='glitch' id='yglitch2'></a></li>
+				<li><a class='glitch' id='nglitch2'></a></li>
+				<li><a class='glitch' id='eglitch2'></a></li>
+				<li><a class='glitch' id='oglitch2'></a></li>
+				<li><a class='glitch' id='lglitch2'></a></li>
+				<li><a class='glitch' id='iglitch2'></a></li>
+				<li><a class='glitch' id='vglitch2'></a></li>
+				<li><a class='glitch' id='eeglitch2'></a></li>
+				<li><a class='glitch' id='rglitch2'></a></li>										
+			</ul>
+		</div>
+		<div id='glitch-group3'>
+			<ul id = 'glitch-ul3'>
+				<li><a class='glitch' id='sglitch3'></a></li>
+				<li><a class='glitch' id='hglitch3'></a></li>
+				<li><a class='glitch' id='aglitch3'></a></li>
+				<li><a class='glitch' id='yglitch3'></a></li>
+				<li><a class='glitch' id='nglitch3'></a></li>
+				<li><a class='glitch' id='eglitch3'></a></li>
+				<li><a class='glitch' id='oglitch3'></a></li>
+				<li><a class='glitch' id='lglitch3'></a></li>
+				<li><a class='glitch' id='iglitch3'></a></li>
+				<li><a class='glitch' id='vglitch3'></a></li>
+				<li><a class='glitch' id='eeglitch3'></a></li>
+				<li><a class='glitch' id='rglitch3'></a></li>										
+			</ul>
+		</div>
+	</div>
+</body>
+<script>
+
+	document.body.setAttribute('style', 'display:grid; grid-template-columns:100%; grid-template-rows:100vh; overflow-x:hidden;')
+	document.getElementById('logo-container').setAttribute('style', 'width:100%; height:100%; display:grid; grid-column:1 / 2; grid-row:1 / 2; grid-template-columns:1fr; grid-template-rows:repeat(5, 1fr);');
+
+	document.getElementById('logo-group').setAttribute('style', 'grid-column:1 / 2; grid-row:3 / 4; text-align:center;  background-color:white;');
+	document.querySelector('ul').setAttribute('style', ' list-style-type:none;');
+
+	var pos = [8.55, 9.27, 8, 8.7, 9.45, 7.9, 9.15, 7.6, 4.05, 8.6, 7.8, 9.5];
+	var letters = ['s','h', 'a', 'y', 'n', 'e', 'o', 'l', 'i', 'v', 'ee', 'r'];
+	for (var i=0; i<letters.length; i+=1){
+		document.getElementById(letters[i]).style.width = pos[i]+'vw';
+	}
+	// document.getElementById('s').style.justifySelf = 'start';
+	// document.getElementById('r').style.backgroundColor = 'red';
+	// glitch box
+	document.getElementById('glitch-group').setAttribute('style', 'display: grid; grid-column:1 / 2; grid-row:3 / 4; text-align:center;  background-color:#ffffff00; overflow-x:hidden; overflow-y:hidden;')
+	document.getElementById('glitch-ul').setAttribute('style', 'margin-top:4.53%; align-self:center; overflow-x:hidden; overflow-y:hidden;')
+
+	var glitches = ['sglitch','hglitch', 'aglitch', 'yglitch', 'nglitch', 'eglitch', 'oglitch', 'lglitch', 'iglitch', 'vglitch', 'eeglitch', 'rglitch'];
+	for (var i=0; i<glitches.length; i+=1){
+		document.getElementById(glitches[i]).setAttribute('style', 'width:'+pos[i]+'vw; mix-blend-mode:difference;')
+		// document.getElementById(glitches[i]).setAttribute('onmouseover',letters[i]+'Over()');
+	}
+
+	document.getElementById('glitch-group2').setAttribute('style', 'display: grid; grid-column:1 / 2; grid-row:3 / 4; text-align:center;  background-color:#ffffff00; overflow-x:hidden; overflow-y:hidden;')
+	document.getElementById('glitch-ul2').setAttribute('style', 'margin-top:4.53%; align-self:center;  overflow-x:hidden; overflow-y:hidden;')
+
+	var glitches2 = ['sglitch2','hglitch2', 'aglitch2', 'yglitch2', 'nglitch2', 'eglitch2', 'oglitch2', 'lglitch2', 'iglitch2', 'vglitch2', 'eeglitch2', 'rglitch2'];
+	var plusminus = [1, -1];
+	for (var i=0; i<glitches2.length; i+=1){
+		// document.getElementById(glitches2[i]).setAttribute('style', 'width:'+pos[i]+'vw; mix-blend-mode:difference; transform:skewX('+(Math.floor(Math.random()*10)+80)*plusminus[Math.floor(Math.random()*plusminus.length)]+'deg); ')
+		document.getElementById(glitches2[i]).setAttribute('style', 'width:'+pos[i]+'vw; mix-blend-mode:difference;')
+
+	}
+
+	document.getElementById('glitch-group3').setAttribute('style', 'display: grid; grid-column:1 / 2; grid-row:3 / 4; text-align:center;  background-color:#ffffff00; overflow-x:hidden; overflow-y:hidden;')
+	document.getElementById('glitch-ul3').setAttribute('style', 'margin-top:4.53%; justify-self:center; overflow-x:hidden; overflow-y:hidden;')
+
+	var glitches3 = ['sglitch3','hglitch3', 'aglitch3', 'yglitch3', 'nglitch3', 'eglitch3', 'oglitch3', 'lglitch3', 'iglitch3', 'vglitch3', 'eeglitch3', 'rglitch3'];
+	for (var i=0; i<glitches3.length; i+=1){
+		document.getElementById(glitches3[i]).setAttribute('style', 'width:'+pos[i]+'vw; mix-blend-mode:difference;')
+		// document.getElementById(glitches[i]).setAttribute('onmouseover',letters[i]+'Over()');
+	}
+
+	// sensor box
+	var color = ['#ffffff','#000000'];
+	var hgduration = 70;
+
+	function hover(letter, w){
+		var sn = 0;
+		var interval = setInterval(function(){
+			sn++;
+			document.getElementById(letter).style.color = color[Math.floor(Math.random()*color.length)];
+			document.getElementById(letter+'glitch').style.backgroundColor = color[Math.floor(Math.random()*color.length)];
+			document.getElementById(letter+'glitch').style.height = Math.floor(Math.random()*10)+'vw';
+			document.getElementById(letter+'glitch').style.width = Math.floor(Math.random()*40)+'vw';
+
+			document.getElementById(letter+'glitch3').style.backgroundColor = color[Math.floor(Math.random()*color.length)];
+			document.getElementById(letter+'glitch3').style.height = Math.floor(Math.random()*13)+'vw';
+			document.getElementById(letter+'glitch3').style.width = Math.floor(Math.random()*14)+'vw';
+
+			// if(sn === hgduration){ 
+   // 				clearInterval(interval);
+   // 				document.getElementById(letter).style.color = '#000000';
+   // 				document.getElementById(letter+'glitch').style.backgroundColor = '#ffffff00';
+   // 				document.getElementById(letter+'glitch').style.width = w+'vw';
+   // 				document.getElementById(letter+'glitch').style.height = 13+'vw';
+
+   // 			}
+		}, Math.floor(Math.random()*50)+300);
+	}
+
+	function letter(letter, w){
+		var sn = 0;
+		var interval = setInterval(function(){
+			sn++;
+			document.getElementById(letter).style.color = color[Math.floor(Math.random()*color.length)];
+		}, Math.floor(Math.random()*50)+100);
+	}
+
+	function hover2(letter, w){
+		var sn2 = 0;
+		var interval2 = setInterval(function(){
+			sn2++;
+
+			// document.getElementById(letter+'glitch2').style.backgroundColor = color[Math.floor(Math.random()*color.length)];
+			// document.getElementById(letter+'glitch2').style.height = Math.floor(Math.random()*30)+'vh';
+			// document.getElementById(letter+'glitch2').style.width = Math.floor(Math.random()*10)+'vw';
+
+			document.getElementById(letter+'glitch2').style.backgroundColor = color[Math.floor(Math.random()*color.length)];
+			document.getElementById(letter+'glitch2').style.height = Math.floor(Math.random()*3)+'vh';
+			document.getElementById(letter+'glitch2').style.width = Math.floor(Math.random()*30)+'vw';
+			// if(sn === hgduration){ 
+   // 				clearInterval(interval);
+   // 				document.getElementById(letter).style.color = '#000000';
+   // 				document.getElementById(letter+'glitch').style.backgroundColor = '#ffffff00';
+   // 				document.getElementById(letter+'glitch').style.width = w+'vw';
+   // 				document.getElementById(letter+'glitch').style.height = 13+'vw';
+
+   // 			}
+		}, Math.floor(Math.random()*20)+500);
+	}
+
+	function sOver() { hover('s', 8.55) }
+	function hOver() { hover('h', 9.27) }
+	function aOver() { hover('a', 8) }
+	function yOver() { hover('y', 8.7) }
+	function nOver() { hover('n', 9.45) }
+	function eOver() { hover('e', 7.9) }
+	function oOver() { hover('o', 9.15) }
+	function lOver() { hover('l', 7.6) }
+	function iOver() { hover('i', 4.05) }
+	function vOver() { hover('v', 8.6) }
+	function eeOver() { hover('ee', 7.8) }
+	function rOver() { hover('r', 9.5) }
+	function sOver2() { hover2('s', 8.55) }
+	function hOver2() { hover2('h', 9.27) }
+	function aOver2() { hover2('a', 8) }
+	function yOver2() { hover2('y', 8.7) }
+	function nOver2() { hover2('n', 9.45) }
+	function eOver2() { hover2('e', 7.9) }
+	function oOver2() { hover2('o', 9.15) }
+	function lOver2() { hover2('l', 7.6) }
+	function iOver2() { hover2('i', 4.05) }
+	function vOver2() { hover2('v', 8.6) }
+	function eeOver2() { hover2('ee', 7.8) }
+	function rOver2() { letter('r', 9.5) }
+	function sOver3() { letter('s', 8.55) }
+	function hOver3() { letter('h', 9.27) }
+	function aOver3() { letter('a', 8) }
+	function yOver3() { letter('y', 8.7) }
+	function nOver3() { letter('n', 9.45) }
+	function eOver3() { letter('e', 7.9) }
+	function oOver3() { letter('o', 9.15) }
+	function lOver3() { letter('l', 7.6) }
+	function iOver3() { letter('i', 4.05) }
+	function vOver3() { letter('v', 8.6) }
+	function eeOver3() { letter('ee', 7.8) }
+	function rOver3() { letter('r', 9.5) }
+
+
+	// window onload glitch animation
+	window.onload = function(){
+		sOver() 
+		hOver()
+		aOver() 
+		yOver() 
+		nOver() 
+		eOver() 
+		oOver() 
+		lOver() 
+		iOver() 
+		vOver() 
+		eeOver()
+		rOver()
+
+		sOver2() 
+		hOver2()
+		aOver2() 
+		yOver2() 
+		nOver2() 
+		eOver2() 
+		oOver2() 
+		lOver2() 
+		iOver2() 
+		vOver2() 
+		eeOver2()
+		rOver2()
+
+		sOver3() 
+		hOver3()
+		aOver3() 
+		yOver3() 
+		nOver3() 
+		eOver3() 
+		oOver3() 
+		lOver3() 
+		iOver3() 
+		vOver3() 
+		eeOver3()
+		rOver3()
+	}
+	
+
+</script>

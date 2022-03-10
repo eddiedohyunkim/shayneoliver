@@ -1,0 +1,290 @@
+<!DOCTYPE>
+<style>													
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed, 
+			figure, figcaption, footer, header, hgroup, 
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+			html,body{margin:0px; padding:0px; position: fixed; width:100vw; height:100%;}
+	@font-face{
+  		font-family: "HelveticaNeue-CondensedBold";
+		src:url('https://static1.squarespace.com/static/61687204ef3b4832a6d15935/t/61c3bbcd70a5ef44633df058/1640217549766/helvetica_condensed.ttf');
+	}
+  
+  header {
+  Display:none; !important
+  }
+  
+  /* Add a black background color to the top navigation */
+.topnav {
+    overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  color:white ;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: ;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: ;
+  color: black;
+}
+
+  
+  
+	.logo, .glitch{
+		font-family: "HelveticaNeue-CondensedBold";
+		font-size:17.5vw;
+		/*background-color: green;*/
+	}
+	ul{
+		display: inline-block;
+		list-style-type: none;
+        margin: 0;
+        padding: 0;
+        /* For IE, the outcast */
+        zoom:1;
+	}
+	li {
+  		float: left;
+	}
+	li a {
+		display: block;
+		text-decoration: none;
+
+	}
+	.glitch{
+		/*background-color: green;*/
+		height: 12.6vw;
+	}
+	.sensor{
+		/*outline: 1px dashed red;*/
+  		/*outline-offset: -1px;*/
+		height: 12.6vw;
+	}
+
+</style>
+<body >
+	<div id='logo-container'>
+      
+      <div class="topnav">
+ <a href="https://anonymousclub.club/">ANONYMOUS CLUB </a>
+    <!--<a href="#about">About</a>-->
+</div>
+
+      
+      
+      
+      
+		<div id='logo-group'>
+			<ul>
+				<li><a class='logo' id='s'>S</a></li>
+				<li><a class='logo' id='h'>H</a></li>
+				<li><a class='logo' id='a'>A</a></li>
+				<li><a class='logo' id='y'>Y</a></li>
+				<li><a class='logo' id='n'>N</a></li>
+				<li><a class='logo' id='e'>E</a></li>
+				<li><a class='logo' id='o'>O</a></li>
+				<li><a class='logo' id='l'>L</a></li>
+				<li><a class='logo' id='i'>I</a></li>
+				<li><a class='logo' id='v'>V</a></li>
+				<li><a class='logo' id='ee'>E</a></li>
+				<li><a class='logo' id='r'>R</a></li>										
+			</ul>
+		</div>
+		<div id='glitch-group'>
+			<ul id = 'glitch-ul'>
+				<li><a class='glitch' id='sglitch'></a></li>
+				<li><a class='glitch' id='hglitch'></a></li>
+				<li><a class='glitch' id='aglitch'></a></li>
+				<li><a class='glitch' id='yglitch'></a></li>
+				<li><a class='glitch' id='nglitch'></a></li>
+				<li><a class='glitch' id='eglitch'></a></li>
+				<li><a class='glitch' id='oglitch'></a></li>
+				<li><a class='glitch' id='lglitch'></a></li>
+				<li><a class='glitch' id='iglitch'></a></li>
+				<li><a class='glitch' id='vglitch'></a></li>
+				<li><a class='glitch' id='eeglitch'></a></li>
+				<li><a class='glitch' id='rglitch'></a></li>										
+			</ul>
+		</div>
+		<div id='sensor-group'>
+			<ul id = 'sensor-ul'>
+				<li><a class='sensor' id='ssensor'></a></li>
+				<li><a class='sensor' id='hsensor'></a></li>
+				<li><a class='sensor' id='asensor'></a></li>
+				<li><a class='sensor' id='ysensor'></a></li>
+				<li><a class='sensor' id='nsensor'></a></li>
+				<li><a class='sensor' id='esensor'></a></li>
+				<li><a class='sensor' id='osensor'></a></li>
+				<li><a class='sensor' id='lsensor'></a></li>
+				<li><a class='sensor' id='isensor'></a></li>
+				<li><a class='sensor' id='vsensor'></a></li>
+				<li><a class='sensor' id='eesensor'></a></li>
+				<li><a class='sensor' id='rsensor'></a></li>										
+			</ul>
+		</div>
+	</div>
+</body>
+<script>
+
+	document.body.setAttribute('style', 'display:grid; grid-template-columns:100%; grid-template-rows:100%; overflow-x:hidden;')
+	document.getElementById('logo-container').setAttribute('style', 'width:100%; height:100%; display:grid; grid-column:1 / 2; grid-row:1 / 2; grid-template-columns:1fr; grid-template-rows:repeat(5, 1fr);');
+
+	document.getElementById('logo-group').setAttribute('style', 'grid-column:1 / 2; grid-row:3 / 4; text-align:center;  background-color:white;');
+	document.querySelector('ul').setAttribute('style', ' list-style-type:none;');
+
+	var pos = [8.55, 9.27, 8, 8.7, 9.45, 7.9, 9.15, 7.6, 4.05, 8.6, 7.8, 9.5];
+	var letters = ['s','h', 'a', 'y', 'n', 'e', 'o', 'l', 'i', 'v', 'ee', 'r'];
+	for (var i=0; i<letters.length; i+=1){
+		document.getElementById(letters[i]).style.width = pos[i]+'vw';
+	}
+	// document.getElementById('s').style.justifySelf = 'start';
+	// document.getElementById('r').style.backgroundColor = 'red';
+	// glitch box
+	document.getElementById('glitch-group').setAttribute('style', 'display: grid; grid-column:1 / 2; grid-row:3 / 4; text-align:center;  background-color:#ffffff00; overflow-x:hidden;')
+	document.getElementById('glitch-ul').setAttribute('style', 'margin-top:4.53%; justify-self:center; overflow-x:hidden; overflow-y:hidden;')
+
+	var glitches = ['sglitch','hglitch', 'aglitch', 'yglitch', 'nglitch', 'eglitch', 'oglitch', 'lglitch', 'iglitch', 'vglitch', 'eeglitch', 'rglitch'];
+	for (var i=0; i<glitches.length; i+=1){
+		document.getElementById(glitches[i]).setAttribute('style', 'width:'+pos[i]+'vw; mix-blend-mode:difference;')
+		// document.getElementById(glitches[i]).setAttribute('onmouseover',letters[i]+'Over()');
+	}
+
+	// sensor box
+	document.getElementById('sensor-group').setAttribute('style', 'display: grid; grid-column:1 / 2; grid-row:3 / 4; text-align:center;  background-color:#ffffff00; ')
+	document.getElementById('sensor-ul').setAttribute('style', 'margin-top:4.53%; justify-self:center; z-index:2;')
+
+	var sensores = ['ssensor','hsensor', 'asensor', 'ysensor', 'nsensor', 'esensor', 'osensor', 'lsensor', 'isensor', 'vsensor', 'eesensor', 'rsensor'];
+	for (var i=0; i<sensores.length; i+=1){
+		document.getElementById(sensores[i]).setAttribute('style', 'width:'+pos[i]+'vw; background-color:#ffffff00; ')
+		document.getElementById(sensores[i]).setAttribute('onmouseover',letters[i]+'Over()');
+	}
+
+	var color = ['#ffffff','#000000'];
+	var hgduration = 70;
+	var gwidth = 10;
+
+	function hover(letter, w){
+		var sn = 0;
+		var interval = setInterval(function(){
+			sn++;
+			document.getElementById(letter).style.color = color[Math.floor(Math.random()*color.length)];
+			document.getElementById(letter+'glitch').style.backgroundColor = color[Math.floor(Math.random()*color.length)];
+			document.getElementById(letter+'glitch').style.height = Math.floor(Math.random()*13)+'vw';
+			document.getElementById(letter+'glitch').style.width = Math.floor(Math.random()*gwidth)+'vw';
+			if(sn === hgduration){ 
+   				clearInterval(interval);
+   				document.getElementById(letter).style.color = '#000000';
+   				document.getElementById(letter+'glitch').style.backgroundColor = '#ffffff00';
+   				document.getElementById(letter+'glitch').style.width = w+'vw';
+   				document.getElementById(letter+'glitch').style.height = 13+'vw';
+
+   			}
+		}, Math.floor(Math.random()*20)+10);
+	}
+
+	function sOver() { hover('s', 8.55) }
+	function hOver() { hover('h', 9.27) }
+	function aOver() { hover('a', 8) }
+	function yOver() { hover('y', 8.7) }
+	function nOver() { hover('n', 9.45) }
+	function eOver() { hover('e', 7.9) }
+	function oOver() { hover('o', 9.15) }
+	function lOver() { hover('l', 7.6) }
+	function iOver() { hover('i', 4.05) }
+	function vOver() { hover('v', 8.6) }
+	function eeOver() { hover('ee', 7.8) }
+	function rOver() { hover('r', 9.5) }
+
+	// window onload glitch animation
+	window.onload = function(){
+		var logoFunctions = {
+			1: function(){sOver();}, 
+			2: function(){hOver();},
+			3: function(){aOver();}, 
+			4: function(){yOver();}, 
+			5: function(){nOver();}, 
+			6: function(){eOver();}, 
+			7: function(){oOver();}, 
+			8: function(){lOver();}, 
+			9: function(){iOver();}, 
+			10: function(){vOver();}, 
+			11: function(){eeOver();},
+			12: function(){rOver();}
+		};
+		var different = Math.floor(Math.random()*8)+5
+		for(var i=1; i<24; i+=1){
+			var j = Math.floor(Math.random()*12)+1
+			logoFunctions[j]();
+		}
+	}
+
+	document.addEventListener('touchstart', showCoordinates, false);
+	document.addEventListener('touchmove', showCoordinates, false);
+	function showCoordinates(event) {
+		var vertTouchArea = window.innerWidth/(letters.length);
+		var touchX = event.touches[0].clientX;
+	 	var touchY = event.touches[0].clientY;
+		if(touchX<vertTouchArea*1){
+			sOver();
+		}else if(touchX<(vertTouchArea*2)){
+			hOver();
+		}else if(touchX<(vertTouchArea*3)){
+			aOver();
+		}else if(touchX<(vertTouchArea*4)){
+			yOver();
+		}else if(touchX<(vertTouchArea*5)){
+			nOver();
+		}else if(touchX<(vertTouchArea*6)){
+			eOver();
+		}else if(touchX<(vertTouchArea*7)){
+			oOver();
+		}else if(touchX<(vertTouchArea*8)){
+			lOver();
+		}else if(touchX<(vertTouchArea*9)){
+			iOver();
+		}else if(touchX<(vertTouchArea*10)){
+			vOver();
+		}else if(touchX<(vertTouchArea*11)){
+			eeOver();
+		}else if(touchX<(vertTouchArea*12)){
+			rOver();
+		}
+	  	// console.log(touchX + ", " + touchY);
+	  }
+	
+
+</script>

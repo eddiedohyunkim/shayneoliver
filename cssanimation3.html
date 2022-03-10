@@ -1,0 +1,101 @@
+<!DOCTYPE>
+<style>                         
+      /*html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed, 
+      div, figcaption, footer, header, hgroup, 
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }*/
+  html,body{margin:0px; padding:0px; width:100%; height:100vh;}
+  @font-face{
+    font-family: "HelveticaNeue-CondensedBold";
+    src:url('https://static1.squarespace.com/static/61687204ef3b4832a6d15935/t/61c3bbcd70a5ef44633df058/1640217549766/helvetica_condensed.ttf');
+  }
+  body{
+    font-family: "HelveticaNeue-CondensedBold";
+    font-size:10.5vw;
+    display:grid;
+    grid-template-columns:100%; 
+    grid-template-rows:100%;
+  }
+  #logo-container{
+     width:100%; 
+     height:100%; 
+     display:grid; 
+     grid-column:1 / 2; 
+     grid-row:1 / 2; 
+     grid-template-columns:1fr; 
+     grid-template-rows:repeat(5, 1fr);
+  }
+ 
+   #carousel-wrapper{
+    display:grid;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    text-align: center;
+    background-color: #ff0000;
+   }
+   #carousel{
+    background-color: #0000ff;
+   }
+  
+  #sh{-webkit-transform: rotateX(0deg)}
+  #mu{-webkit-transform: rotateX(120deg)}
+  #an{-webkit-transform: rotateX(240deg)}
+
+  #carousel {
+    z-index: 100;
+    transform-style: preserve-3d;
+    transition: all 1s;
+    /*position: absolute;*/
+  }
+  
+  #carousel div {
+    width:100%;
+    position: fixed;
+    margin: 0px;
+    padding: 0px;
+    transition: all 1s;
+    backface-visibility: hidden;
+  }
+</style>
+<body>
+  <div id='logo-container'>
+    <div id="carousel-wrapper">
+      <div id="carousel" style="-webkit-transform: rotateX(0deg)">
+        <div id ='sh'>SHAYNEOLIVER</div>
+        <div id ='mu'>MUSEUM</div>
+        <div id ='an'>ANONYMOUS CLUB</div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+
+  let increment = 0;
+  var j =0;
+  setInterval(() => {
+    increment++;
+    document.getElementById('carousel').setAttribute('style','-webkit-transform:rotateX(' + increment * -120 + 'deg);');
+    if(j ==1){
+      clearInterval(interval);
+    }
+  }, 1000)
+  
+  
+
+</script>

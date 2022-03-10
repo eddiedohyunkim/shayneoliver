@@ -1,0 +1,100 @@
+<!DOCTYPE>
+<style>                         
+      /*html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed, 
+      figure, figcaption, footer, header, hgroup, 
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }*/
+  html,body{margin:0px; padding:0px; width:100%; height:100vh;}
+  @font-face{
+    font-family: "HelveticaNeue-CondensedBold";
+    src:url('https://static1.squarespace.com/static/61687204ef3b4832a6d15935/t/61c3bbcd70a5ef44633df058/1640217549766/helvetica_condensed.ttf');
+  }
+  body{
+    font-family: "HelveticaNeue-CondensedBold";
+    font-size:17.5vw;
+  }
+  #carousel-wrapper,
+  #carousel figure {
+    height: 100px;
+    line-height: 100px;
+    color: white;
+  }
+  
+  #carousel figure:nth-of-type(1) {-webkit-transform: rotateX(0deg) translateZ(30px);}
+  #carousel figure:nth-of-type(2) {-webkit-transform: rotateX(120deg) translateZ(30px);}
+  #carousel figure:nth-of-type(3) {-webkit-transform: rotateX(240deg) translateZ(30px);}
+  
+  
+  #carousel[data-state="1"] figure:nth-of-type(1),
+  #carousel[data-state="2"] figure:nth-of-type(2),
+  #carousel[data-state="3"] figure:nth-of-type(3)
+   { opacity: 1; }
+  
+  #carousel-wrapper {
+    position: absolute;
+    width: 50%;
+    text-align: center;
+  /*   perspective: 1100px; */
+  }
+  
+  #carousel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 100;
+    transform-style: preserve-3d;
+    transition: all 1s;
+  }
+  
+  #carousel figure {
+    display: block;
+    position: absolute;
+    width: 100%;
+    margin: 0;
+    font-size: 80px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    transition: all 1s;
+    backface-visibility: hidden;
+  }
+</style>
+<body >
+ <div id="carousel-wrapper">
+  <div id="carousel" data-state="1" style="-webkit-transform: rotateX(0deg)">
+    <figure>SHAYNEOLIVER</figure>
+    <figure>MUSEUM</figure>
+    <figure>ANONYMOUS CLUB</figure>
+  </div>
+</div>
+</body>
+<script>
+
+  let increment = 0;
+  const carousel = document.getElementById('carousel');
+
+  setInterval(() => {
+    increment++;
+    carousel.setAttribute('style','-webkit-transform:rotateX(' + increment * -120 + 'deg);');
+    carousel.setAttribute('data-state', (increment % 3) + 1);
+  }, 1000)
+  
+  
+
+</script>

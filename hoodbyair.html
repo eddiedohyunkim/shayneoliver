@@ -1,0 +1,536 @@
+<html>
+<style>
+	html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed, 
+			figure, figcaption, footer, header, hgroup, 
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+	p, div{font-family: Helvetica, Arial, sans-serif;}
+	@font-face{
+  		font-family: "HelveticaNeue-CondensedBold";
+		src:url('https://static1.squarespace.com/static/61687204ef3b4832a6d15935/t/61c3bbcd70a5ef44633df058/1640217549766/helvetica_condensed.ttf');
+	}
+	.logo, .glitch{
+		font-family: "HelveticaNeue-CondensedBold";
+		font-size:14.2vw;
+		/*background-color: green;*/
+	}
+	ul{
+		display: inline-block;
+		list-style-type: none;
+        margin: 0;
+        padding: 0;
+        /* For IE, the outcast */
+        zoom:1;
+	}
+	li {
+  		float: left;
+	}
+	li a {
+		display: block;
+		text-decoration: none;
+
+	}
+	.glitch{
+		/*background-color: green;*/
+		height: 10.2vw;
+	}
+	.sensor{
+		/*outline: 1px dashed red;*/
+  		/*outline-offset: -1px;*/
+		height: 10.2vw;
+	}
+
+</style>
+<body>
+	<p id='brand'></p>
+	<div id='imageContainer1'></div>
+	<div id='imageContainer2'></div>
+	<div id='imageContainer3'></div>
+	<div id='imageContainer4'></div>
+	<div id='imageContainer5'></div>
+	<div id='imageContainer6'></div>
+	<div id='imageContainer7'></div>
+	<div id='imageContainer8'></div>
+	<div id='imageContainer9'></div>
+	<div id='imageContainer10'></div>
+
+	<div id='logo-container'>
+		<div id='logo-group'>
+			<ul id='logo-ul'>
+				<li><a class='logo' id='h'>H</a></li>
+				<li><a class='logo' id='o'>O</a></li>
+				<li><a class='logo' id='oo'>O</a></li>
+				<li><a class='logo' id='d'>D</a></li>
+				<li><a class='logo' id='b'>B</a></li>
+				<li><a class='logo' id='y'>Y</a></li>
+				<li><a class='logo' id='a'>A</a></li>
+				<li><a class='logo' id='i'>I</a></li>
+				<li><a class='logo' id='r'>R</a></li>											
+			</ul>
+		</div>
+		<div id='glitch-group'>
+			<ul id = 'glitch-ul'>
+				<li><a class='glitch' id='hglitch'></a></li>
+				<li><a class='glitch' id='oglitch'></a></li>
+				<li><a class='glitch' id='ooglitch'></a></li>
+				<li><a class='glitch' id='dglitch'></a></li>
+				<li><a class='glitch' id='bglitch'></a></li>
+				<li><a class='glitch' id='yglitch'></a></li>
+				<li><a class='glitch' id='aglitch'></a></li>
+				<li><a class='glitch' id='iglitch'></a></li>
+				<li><a class='glitch' id='rglitch'></a></li>										
+			</ul>
+		</div>
+	</div>
+</body>
+<script type='text/javascript'>
+	setColumn();
+	window.addEventListener("resize", setColumn);
+	
+	var WorH;
+	var size;
+	var columnNumber;
+	var categoryGap;
+	function setColumn(){
+		var width = document.body.clientWidth;
+		console.log(width);
+		if(/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+			function detectOrientation(){
+				if(typeof window.onorientationchange != 'undefined'){
+					if(window.orientation==0){ // portrait
+						columnNumber = 2;
+						WorH = 'width:100%;';
+						size = 2;
+						categoryGap = 200;
+
+					}else if(window.orientation==90 || window.orientation==-90){ // landscape
+						columnNumber = 3;
+						WorH = 'height:100%;';
+						size = 1;
+						categoryGap = 200;
+					} // fi
+				}
+			} 
+		detectOrientation();
+		window.onorientationchange = detectOrientation;
+		}else if(/iPad/i.test(navigator.userAgent)){
+			function detectOrientation(){
+				if(typeof window.onorientationchange != 'undefined'){
+					if(window.orientation==0){ // portrait
+						columnNumber = 4;
+						WorH = 'height:90%;';
+						size = 1;
+						categoryGap = 100;
+
+					}else if(window.orientation==90 || window.orientation==-90){ // landscape
+						columnNumber = 4;
+						WorH = 'height:100%;';
+						size = 1;
+						categoryGap = 100;
+					} // fi
+				}
+			} 
+		detectOrientation();
+		window.onorientationchange = detectOrientation;
+			
+		}else if(width<600){
+			columnNumber = 2;
+			WorH = 'width:100%;';
+			size = 1;
+			categoryGap = 100;
+		}else if(width<900){
+			columnNumber = 3;
+			WorH = 'height:100vh;';
+			size = 1;
+			categoryGap = 100;
+		}else if(width<1200){
+			columnNumber = 4;
+			WorH = 'height:100vh;';
+			size = 1;
+			categoryGap = 100;
+		}else{
+			columnNumber = 5;
+			WorH = 'height:100vh;';
+			size = 1;
+			categoryGap = 100;
+		}
+		document.body.setAttribute('style','display:grid; grid-template-columns: 100%; grid-auto-rows:auto; row-gap:'+categoryGap+'px;');
+		document.getElementById('imageContainer1').setAttribute('style','width:100%; grid-column:1 / 2; grid-row: 1 / 2; display:grid; grid-template-columns:repeat('+columnNumber+',1fr); grid-auto-rows:minmax(100px, auto); column-gap: 10px; row-gap: 10px;');
+		document.getElementById('imageContainer2').setAttribute('style','width:100%; grid-column:1 / 2; grid-row: 2 / 3; display:grid; grid-template-columns:repeat('+columnNumber+',1fr); grid-auto-rows:minmax(100px, auto); column-gap: 10px; row-gap: 10px;');
+		document.getElementById('imageContainer3').setAttribute('style','width:100%; grid-column:1 / 2; grid-row: 3 / 4; display:grid; grid-template-columns:repeat('+columnNumber+',1fr); grid-auto-rows:minmax(100px, auto); column-gap: 10px; row-gap: 10px;');
+		document.getElementById('imageContainer4').setAttribute('style','width:100%; grid-column:1 / 2; grid-row: 4 / 5; display:grid; grid-template-columns:repeat('+columnNumber+',1fr); grid-auto-rows:minmax(100px, auto); column-gap: 10px; row-gap: 10px;');
+		document.getElementById('imageContainer5').setAttribute('style','width:100%; grid-column:1 / 2; grid-row: 5 / 6; display:grid; grid-template-columns:repeat('+columnNumber+',1fr); grid-auto-rows:minmax(100px, auto); column-gap: 10px; row-gap: 10px;');
+		document.getElementById('imageContainer6').setAttribute('style','width:100%; grid-column:1 / 2; grid-row: 6 / 7; display:grid; grid-template-columns:repeat('+columnNumber+',1fr); grid-auto-rows:minmax(100px, auto); column-gap: 10px; row-gap: 10px;');
+		document.getElementById('imageContainer7').setAttribute('style','width:100%; grid-column:1 / 2; grid-row: 7 / 8; display:grid; grid-template-columns:repeat('+columnNumber+',1fr); grid-auto-rows:minmax(100px, auto); column-gap: 10px; row-gap: 10px;');
+		document.getElementById('imageContainer8').setAttribute('style','width:100%; grid-column:1 / 2; grid-row: 8 / 9; display:grid; grid-template-columns:repeat('+columnNumber+',1fr); grid-auto-rows:minmax(100px, auto); column-gap: 10px; row-gap: 10px;');
+		document.getElementById('imageContainer9').setAttribute('style','width:100%; grid-column:1 / 2; grid-row: 9 / 10; display:grid; grid-template-columns:repeat('+columnNumber+',1fr); grid-auto-rows:minmax(100px, auto); column-gap: 10px; row-gap: 10px;');
+		document.getElementById('imageContainer10').setAttribute('style','width:100%; grid-column:1 / 2; grid-row: 10 / 11; display:grid; grid-template-columns:repeat('+columnNumber+',1fr); grid-auto-rows:minmax(100px, auto); column-gap: 10px; row-gap: 10px;');
+
+
+		var getBrand = document.getElementById('brand');
+		getBrand.setAttribute('style',' width:100%; justify-self: center; font-size:'+size+'em; text-align:center; top:0; position:fixed; z-index:2;');
+	}
+
+	document.getElementById('logo-container').setAttribute('style', 'width:100%; height:100vh; display:grid; grid-column:1 / 2; grid-row:1 / 2; grid-template-columns:1fr; grid-template-rows:repeat(5, 1fr); position:fixed; visibility:hidden; ');
+	var pos = [7.4, 7.6, 7.4, 11.5, 7.1, 10.2, 7.5, 3.2, 8];
+	var letters = ['h', 'o', 'oo', 'd', 'b', 'y', 'a', 'i', 'r'];
+	// logo groups
+	document.getElementById('logo-group').setAttribute('style', 'grid-column:1 / 2; grid-row:3 / 4; text-align:center; visibility:hidden;');
+
+	document.querySelector('ul').setAttribute('style', ' list-style-type:none;');	
+	document.getElementById('logo-ul').setAttribute('style', 'visibility:hidden;');
+	// glitch box
+	document.getElementById('glitch-group').setAttribute('style', 'display: grid; grid-column:1 / 2; grid-row:3 / 4; text-align:center;  background-color:#ffffff00; overflow-x:hidden;');
+	document.getElementById('glitch-ul').setAttribute('style', 'margin-top:3.73%; justify-self:center; overflow-x:hidden; overflow-y:hidden;')
+
+	for (var i=0; i<letters.length; i+=1){
+		document.getElementById(letters[i]).style.width = pos[i]+'vw';
+		document.getElementById(letters[i]).style.visibility = 'visible';
+		document.getElementById(letters[i]+'glitch').setAttribute('style', 'width:'+pos[i]+'vw; mix-blend-mode:difference; visibility:visible;');
+		// document.getElementById(letters[i]+'sensor').setAttribute('onmouseover',letters[i]+'Over()');
+	}
+	document.getElementById('d').style.textAlign = 'start';
+	document.getElementById('y').style.textAlign = 'start';
+	
+
+	var color = ['#ffffff','#000000'];
+	var hgduration = 70;
+	var gwidth = 11;
+
+	function hover(letter, w){
+		var sn = 0;
+		var interval = setInterval(function(){
+			sn++;
+			document.getElementById(letter).style.color = color[Math.floor(Math.random()*color.length)];
+			document.getElementById(letter+'glitch').style.backgroundColor = color[Math.floor(Math.random()*color.length)];
+			document.getElementById(letter+'glitch').style.height = Math.floor(Math.random()*11)+'vw';
+			document.getElementById(letter+'glitch').style.width = Math.floor(Math.random()*gwidth)+'vw';
+			if(sn === hgduration){ 
+   				clearInterval(interval);
+   				document.getElementById(letter).style.color = '#000000';
+   				document.getElementById(letter+'glitch').style.backgroundColor = '#ffffff00';
+   				document.getElementById(letter+'glitch').style.width = w+'vw';
+   				document.getElementById(letter+'glitch').style.height = 10.2+'vw';
+
+   			}
+		}, Math.floor(Math.random()*20)+10);
+	}
+
+	function hOver() { hover('h', 7.4) }
+	function oOver() { hover('o', 7.6) }
+	function ooOver() { hover('oo', 7.4) }
+	function dOver() { hover('d', 11.5) }
+	function bOver() { hover('b', 7.1) }
+	function yOver() { hover('y', 10.2) }
+	function aOver() { hover('a', 7.5) }
+	function iOver() { hover('i', 3.2) }
+	function rOver() { hover('r', 8) }
+
+	// window onload glitch animation
+	// window.onload = function(){
+		hOver(); 
+		oOver();
+		ooOver(); 
+		dOver(); 
+		bOver(); 
+		yOver();
+		aOver(); 
+		iOver(); 
+		rOver(); 
+	// }
+
+	pc();
+	function pc(){
+		window.onscroll = function (){
+			console.log(window.pageYOffset);
+			var ib1B = document.getElementById('imageContainer1').getBoundingClientRect();
+			console.log('imageContainer1', ib1B.bottom);
+			var ib2B = document.getElementById('imageContainer2').getBoundingClientRect();
+			console.log('imageContainer2', ib2B.bottom);
+			var ib3B = document.getElementById('imageContainer3').getBoundingClientRect();
+			console.log('imageContainer3', ib3B.bottom);
+			var ib4B = document.getElementById('imageContainer4').getBoundingClientRect();
+			console.log('imageContainer4', ib4B.bottom);
+			var ib5B = document.getElementById('imageContainer5').getBoundingClientRect();
+			console.log('imageContainer5', ib5B.bottom);
+			var ib6B = document.getElementById('imageContainer6').getBoundingClientRect();
+			console.log('imageContainer6', ib6B.bottom);
+			var ib7B = document.getElementById('imageContainer7').getBoundingClientRect();
+			console.log('imageContainer7', ib7B.bottom);
+			var ib8B = document.getElementById('imageContainer8').getBoundingClientRect();
+			console.log('imageContainer8', ib8B.bottom);
+			var ib9B = document.getElementById('imageContainer9').getBoundingClientRect();
+			console.log('imageContainer9', ib9B.bottom);
+			var ib10B = document.getElementById('imageContainer10').getBoundingClientRect();
+			console.log('imageContainer10', ib10B.bottom);
+
+
+	
+			if(window.pageYOffset===0){
+				document.getElementById('brand').innerHTML = '';
+			}else if(1<ib1B.bottom){
+				document.getElementById('brand').innerHTML = 'HOOD BY AIR 1';
+			}
+			if(ib1B.bottom<0){
+				document.getElementById('brand').innerHTML = 'HOOD BY AIR 2';
+			}
+			if(ib2B.bottom<0){
+				document.getElementById('brand').innerHTML = 'HOOD BY AIR 3';
+			}
+			if(ib3B.bottom<0){
+				document.getElementById('brand').innerHTML = 'HOOD BY AIR 4';
+			}
+			if(ib4B.bottom<0){
+				document.getElementById('brand').innerHTML = 'HOOD BY AIR 5';
+			}
+			if(ib5B.bottom<0){
+				document.getElementById('brand').innerHTML = 'HOOD BY AIR 6';
+			}
+			if(ib6B.bottom<0){
+				document.getElementById('brand').innerHTML = 'HOOD BY AIR 7';
+			}
+			if(ib7B.bottom<0){
+				document.getElementById('brand').innerHTML = 'HOOD BY AIR 8';
+			}
+			if(ib8B.bottom<0){
+				document.getElementById('brand').innerHTML = 'HOOD BY AIR 9';
+			}
+			if(ib9B.bottom<0){
+				document.getElementById('brand').innerHTML = 'HOOD BY AIR 10';
+			}
+			
+		}
+		
+		//350 391
+		for(var i=0; i<42; i+=1){
+			var box = document.createElement('div');
+			box.setAttribute('id', 'box'+(i));
+			box.setAttribute('class', 'boxes');
+			box.setAttribute('style', 'width:100%; height:100%;');
+			document.getElementById('imageContainer1').appendChild(box);
+			appendImage(i, 350);
+		}
+		//304 349 
+		for(var i=42; i<88; i+=1){
+			var box = document.createElement('div');
+			box.setAttribute('id', 'box'+(i));
+			box.setAttribute('class', 'boxes');
+			box.setAttribute('style', 'width:100%; height:100%;');
+			document.getElementById('imageContainer2').appendChild(box);
+			appendImage(i, 262);
+		}
+		//266 304
+		for(var i=88; i<126; i+=1){
+			var box = document.createElement('div');
+			box.setAttribute('id', 'box'+(i));
+			box.setAttribute('class', 'boxes');
+			box.setAttribute('style', 'width:100%; height:100%;');
+			document.getElementById('imageContainer3').appendChild(box);
+			appendImage(i, 178);
+		}
+		//218 266
+		for(var i=126; i<174; i+=1){
+			var box = document.createElement('div');
+			box.setAttribute('id', 'box'+(i));
+			box.setAttribute('class', 'boxes');
+			box.setAttribute('style', 'width:100%; height:100%;');
+			document.getElementById('imageContainer4').appendChild(box);
+			appendImage(i, 92);
+		}
+		//181 218		
+		for(var i=174; i<211; i+=1){
+			var box = document.createElement('div');
+			box.setAttribute('id', 'box'+(i));
+			box.setAttribute('class', 'boxes');
+			box.setAttribute('style', 'width:100%; height:100%;');
+			document.getElementById('imageContainer5').appendChild(box);
+			appendImage(i, 7);
+		}
+		//145 180
+		for(var i=211; i<246; i+=1){
+			var box = document.createElement('div');
+			box.setAttribute('id', 'box'+(i));
+			box.setAttribute('class', 'boxes');
+			box.setAttribute('style', 'width:100%; height:100%;');
+			document.getElementById('imageContainer6').appendChild(box);
+			appendImage(i, -66)
+		}
+		//128 145
+		for(var i=246; i<263; i+=1){
+			var box = document.createElement('div');
+			box.setAttribute('id', 'box'+(i));
+			box.setAttribute('class', 'boxes');
+			box.setAttribute('style', 'width:100%; height:100%;');
+			document.getElementById('imageContainer7').appendChild(box);
+			appendImage(i, -118);
+		}
+		//86 128
+		for(var i=263; i<305; i+=1){
+			var box = document.createElement('div');
+			box.setAttribute('id', 'box'+(i));
+			box.setAttribute('class', 'boxes');
+			box.setAttribute('style', 'width:100%; height:100%;');
+			document.getElementById('imageContainer8').appendChild(box);
+			appendImage(i, -177);
+		}
+		// 45 84
+		for(var i=305; i<344; i+=1){
+			var box = document.createElement('div');
+			box.setAttribute('id', 'box'+(i));
+			box.setAttribute('class', 'boxes');
+			box.setAttribute('style', 'width:100%; height:100%;');
+			document.getElementById('imageContainer9').appendChild(box);
+			appendImage(i, -260);
+		}
+		// 1 44
+		for(var i=344; i<387; i+=1){
+			var box = document.createElement('div');
+			box.setAttribute('id', 'box'+i);
+			box.setAttribute('class', 'boxes');
+			box.setAttribute('style', 'width:100%; height:100%;');
+			document.getElementById('imageContainer10').appendChild(box);
+			appendImage(i, -343 );
+		}
+
+		function appendImage(index, num){
+			var image = document.createElement('img');
+			image.setAttribute('src', 'assets/image/hba/HBA'+(index+num)+'.jpeg');
+			image.setAttribute('style', 'width:100%; opacity:100%;');
+			image.setAttribute('id', 'image'+index)
+			image.setAttribute('class', 'images');
+			image.setAttribute('onclick','largeimagePC('+index+','+num+')');
+			document.getElementById('box'+index).appendChild(image);
+		}
+	}
+	
+	function largeimagePC(index, num){
+		console.log('this is index ', index)
+		disableScroll()
+		var allimgsArray = [];
+		var allimgs = document.getElementsByTagName('img');
+		for(var i=0; i<allimgs.length; i+=1){
+			allimgsArray[i] = allimgs[i].src
+		}
+		console.log(allimgsArray);
+
+		// document.body.style.overflowY = 'hidden';
+		document.body.style.backgroundColor = '#fefefe';
+
+		// invert layer(z-index 1)
+		var invertbox = document.createElement('div');
+		invertbox.setAttribute('id','invertbox');
+		invertbox.setAttribute('style', 'display:grid; grid-template-columns:1fr; grid-template-rows:1fr; width:100%; height:100vh; left:0; position:fixed; background-color:#ffffffcc; mix-blend-mode: difference; z-index:1;');
+		invertbox.addEventListener('click', erasePC, false);
+		document.body.appendChild(invertbox);
+
+		// large image div layer(z-index 2)
+		var largeimgCont = document.createElement('div');
+		largeimgCont.setAttribute('id', 'largeimgContainer');
+		largeimgCont.setAttribute('style', 'display:flex; position:fixed; width:100vw; height:1px; background-color:#ffffff00; z-index:2;');
+		
+		document.body.appendChild(largeimgCont);
+
+		// large image holder layer(z-index 3)
+		var largeimgHolder = document.createElement('div');
+		largeimgHolder.setAttribute('id', 'largeimgHolder');
+		largeimgHolder.setAttribute('style', 'display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:1fr; margin:auto; height:100vw; background-color:#ffffff00; z-index:3;');
+		document.getElementById('largeimgContainer').appendChild(largeimgHolder);
+
+		// large image previous and next layer(z-index 5)
+		var previous = document.createElement('div');
+		previous.setAttribute('style', ` grid-column:1/2; grid-row:1/2; width:100%; height:100%; background-color:#ffffff00; z-index:5; cursor:w-resize;`);
+		previous.addEventListener('click', prevImg);
+		document.getElementById('largeimgHolder').appendChild(previous);
+
+		var next = document.createElement('div');
+		next.setAttribute('style', ` grid-column:3/4; grid-row:1/2; width:100%; height:100%; justify-self:right; background-color:#ffffff00; z-index:5; cursor:e-resize;`);
+		next.addEventListener('click',nextImg);
+		document.getElementById('largeimgHolder').appendChild(next);
+
+		var largeimg = document.createElement('img');
+		largeimg.setAttribute('src', 'assets/image/hba/HBA'+(index+num)+'.jpeg');
+		largeimg.setAttribute('id', 'largeimg');
+		largeimg.setAttribute('style',''+WorH+' grid-column:1/4; grid-row:1/2; z-index:4;');
+		document.getElementById('largeimgHolder').appendChild(largeimg);	
+
+
+		function nextImg(){
+			(index<allimgsArray.length-1) ? index++ : index=allimgsArray.length-1;
+			largeimg.setAttribute('src', allimgsArray[index] );
+		}
+		function prevImg(){
+			(0<index) ? index-- : index=0;
+			largeimg.setAttribute('src', allimgsArray[index]);
+		}
+	}	
+
+	// left: 37, up: 38, right: 39, down: 40,
+	// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+	var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+	
+	function preventDefault(e) {
+		e.preventDefault();
+	}
+	
+	function preventDefaultForScrollKeys(e) {
+		if (keys[e.keyCode]) {
+			preventDefault(e);
+			return false;
+		}
+	}
+	
+	// modern Chrome requires { passive: false } when adding event
+	var supportsPassive = false;
+	try{
+	 	window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+	    get: function () { supportsPassive = true; } 
+	  }));
+	}catch(e) {}
+	
+	var wheelOpt = supportsPassive ? { passive: false } : false;
+	var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+	
+	// call this to Disable
+	function disableScroll() {
+		window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+		window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+		window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+		window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+	}
+
+	// call this to Enable
+	function enableScroll() {
+		window.removeEventListener('DOMMouseScroll', preventDefault, false);
+		window.removeEventListener(wheelEvent, preventDefault, wheelOpt); 
+		window.removeEventListener('touchmove', preventDefault, wheelOpt);
+		window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+	}
+
+	function erasePC(index){
+		enableScroll();
+		// document.body.style.overflowY = 'visible';
+		document.body.style.backgroundColor = '#ffffff';
+		// document.getElementById('imagetag').remove();
+		document.getElementById('invertbox').remove();
+		document.getElementById('largeimgContainer').remove();
+	}
+
+
+</script>
+</html>

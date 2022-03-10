@@ -1,0 +1,859 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+<style>													
+			html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed, 
+			figure, figcaption, footer, header, hgroup, 
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}
+	@font-face{
+  		font-family: "HelveticaNeue-CondensedBold";
+		src:url('https://static1.squarespace.com/static/61687204ef3b4832a6d15935/t/61c3bbcd70a5ef44633df058/1640217549766/helvetica_condensed.ttf');
+	}
+	@font-face{
+  		font-family: "HelveticaNeue-CondensedRegular";
+		src:url('https://static1.squarespace.com/static/61687204ef3b4832a6d15935/t/62181bf85527e66346ce22c0/1645747192902/helvetica_condensed_regular.ttf');
+	}
+
+	.logo, .glitch{
+		font-family: "HelveticaNeue-CondensedBold";
+		font-size:14.2vw;
+	}
+	ul{
+		display: inline-block;
+		list-style-type: none;
+        margin: 0;
+        padding: 0;
+        /* For IE, the outcast */
+        zoom:1;
+	}
+	li {
+  		float: left;
+	}
+	li a {
+		display: block;
+		text-decoration: none;
+
+	}
+	.glitch{
+		/*background-color: green;*/
+		height: 10.2vw;
+	}
+	.sensor{
+		/*outline: 1px dashed red;*/
+  		/*outline-offset: -1px;*/
+		height: 10.2vw;
+	}
+	body{
+		width:100vw;
+		/*height:100%;*/
+	}
+	#menu{
+		font-family: "HelveticaNeue-CondensedBold";
+		margin:0;
+		padding:0;
+		position:fixed;
+		top:-5px;
+		font-size: 30px;
+		display:flex;
+		z-index: 100000;
+		letter-spacing: -1;
+		cursor: default;
+		color:#ffffff;
+		mix-blend-mode: difference;
+	}
+	#info{
+		position:fixed;
+		left:0px;
+	}
+	#shop{
+		position:fixed;
+		right:0px;
+	}
+
+
+
+</style>
+</head>
+<body>
+	
+	<div id='video-container'>
+		<video controls autoplay muted loop>
+			<!-- <source src='assets/image/headless/video/wench_rough.mp4' type='video/mp4'> -->
+    <source src="https://drive.google.com/uc?export=download&id=1_dmMHzV_Z8roRJTugbqYDtv9bf5PUFFC" type='video/mp4'>
+			<!-- <iframe src="https://drive.google.com/file/d/1_dmMHzV_Z8roRJTugbqYDtv9bf5PUFFC/preview" width="640" height="480" allow="autoplay"></iframe> -->
+		</video>
+	</div>
+	<div id='menu'>
+			<div id='info'>info</div>
+			<div id='shop'>shop</div>
+		</div>
+
+	<div id='logo-container'>
+		<div id='logo-group'>
+			<ul id='logo-ul'>
+				<li><a class='logo' id='h'>H</a></li>
+				<li><a class='logo' id='e'>E</a></li>
+				<li><a class='logo' id='a'>A</a></li>
+				<li><a class='logo' id='d'>D</a></li>
+				<li><a class='logo' id='l'>L</a></li>
+				<li><a class='logo' id='ee'>E</a></li>
+				<li><a class='logo' id='s'>S</a></li>
+				<li><a class='logo' id='ss'>S</a></li>				
+			</ul>
+		</div>
+		<div id='glitch-group'>
+			<ul id = 'glitch-ul'>
+				<li><a class='glitch' id='hglitch'></a></li>
+				<li><a class='glitch' id='eglitch'></a></li>
+				<li><a class='glitch' id='aglitch'></a></li>
+				<li><a class='glitch' id='dglitch'></a></li>
+				<li><a class='glitch' id='lglitch'></a></li>
+				<li><a class='glitch' id='eeglitch'></a></li>
+				<li><a class='glitch' id='sglitch'></a></li>
+				<li><a class='glitch' id='ssglitch'></a></li>
+			</ul>
+		</div>
+		<div id='sensor-group'>
+			<ul id = 'sensor-ul'>
+				<li><a class='sensor' id='hsensor'></a></li>
+				<li><a class='sensor' id='esensor'></a></li>
+				<li><a class='sensor' id='asensor'></a></li>
+				<li><a class='sensor' id='dsensor'></a></li>
+				<li><a class='sensor' id='lsensor'></a></li>
+				<li><a class='sensor' id='eesensor'></a></li>
+				<li><a class='sensor' id='ssensor'></a></li>
+				<li><a class='sensor' id='sssensor'></a></li>
+			</ul>
+		</div>
+	</div>
+	<div id='image-container'></div>
+
+<!-- 	<div id='motherbox1'></div>
+	<div id='motherbox2'></div>
+	<div id='motherbox3'></div>
+	<div id='motherbox4'></div>
+	<div id='motherbox1a'></div>
+	<div id='motherbox2a'></div>
+	<div id='motherbox3a'></div>
+	<div id='motherbox4a'></div>
+	<img id='diesel_rep'>
+	<img id='colmar_rep'>
+	<img id='helmutlang_rep'>
+	<img id='hoodbyair_rep'> -->
+	
+</body>
+<script>
+go();
+function go(){
+
+	document.getElementById('shop').setAttribute('onclick','window.location="https://www.ssense.com/en-us/men/designers/hood-by-air";');
+
+	document.body.setAttribute('style', 'display:grid; grid-template-columns:100%; grid-template-rows:100%; overflow-x:hidden;')
+	document.getElementById('logo-container').setAttribute('style', 'width:100%; height:100%; display:grid; grid-column:1 / 2; grid-row:1 / 2; grid-template-columns:1fr; grid-template-rows:repeat(5, 1fr);');
+	document.getElementById('logo-group').setAttribute('style', 'grid-column:1 / 2; grid-row:3 / 4; text-align:center; background-color:#ffffff00;');
+	document.querySelector('ul').setAttribute('style', 'list-style-type:none;');
+
+	var pos = [7.4, 6.8, 7.5, 7.6, 6.3, 6.5, 7, 7.5];
+	var letters = ['h','e', 'a', 'd', 'l', 'ee', 's', 'ss'];
+	for (var i=0; i<letters.length; i+=1){
+		document.getElementById(letters[i]).style.width = pos[i]+'vw';
+	}
+	// document.getElementById("ss").style.backgroundColor = 'red';
+	// document.getElementById("h").style.backgroundColor = 'red';
+	// glitch box
+	document.getElementById('glitch-group').setAttribute('style', 'display: grid; grid-column:1 / 2; grid-row:3 / 4; text-align:center;  background-color:#ffffff00; overflow-x:hidden;');
+	document.getElementById('glitch-ul').setAttribute('style', 'margin-top:3.73%; justify-self:center; overflow-x:hidden; overflow-y:hidden;')
+
+	for (var i=0; i<letters.length; i+=1){
+		document.getElementById(`${letters[i]}glitch`).setAttribute('style', 'width:'+pos[i]+'vw; mix-blend-mode:difference;')
+		// document.getElementById(glitches[i]).setAttribute('onmouseover',letters[i]+'Over()');
+	}
+
+	// sensor box
+	document.getElementById('sensor-group').setAttribute('style', 'display: grid; grid-column:1 / 2; grid-row:3 / 4; text-align:center;  background-color:#ffffff00; ')
+	document.getElementById('sensor-ul').setAttribute('style', 'margin-top:3.73%; justify-self:center; z-index:2;')
+
+	for (var i=0; i<letters.length; i+=1){
+		document.getElementById(`${letters[i]}sensor`).setAttribute('style', 'width:'+pos[i]+'vw; background-color:#ffffff00; ')
+		document.getElementById(`${letters[i]}sensor`).setAttribute('onmouseover',`${letters[i]}Over();`);
+		// document.getElementById(`${letters[i]}sensor`).setAttribute('onclick','window.location="https://eddiedohyunkim.github.io/shayneoliver/overview.html";');
+	}
+
+	var color = ['#ffffff','#000000'];
+	var hgduration = 70;
+	var gwidth = 10;
+
+	function hover(letter, w){
+		var sn = 0;
+		var interval = setInterval(function(){
+			sn++;
+			document.getElementById(letter).style.color = color[Math.floor(Math.random()*color.length)];
+			document.getElementById(letter+'glitch').style.backgroundColor = color[Math.floor(Math.random()*color.length)];
+			document.getElementById(letter+'glitch').style.height = Math.floor(Math.random()*11)+'vw';
+			document.getElementById(letter+'glitch').style.width = Math.floor(Math.random()*gwidth)+'vw';
+			if(sn === hgduration){ 
+   				clearInterval(interval);
+   				document.getElementById(letter).style.color = '#ffffff';
+   				document.getElementById(letter+'glitch').style.backgroundColor = '#ffffff00';
+   				document.getElementById(letter+'glitch').style.width = w+'vw';
+   				document.getElementById(letter+'glitch').style.height = 10.2+'vw';
+
+   			}
+		}, Math.floor(Math.random()*20)+10);
+	}
+
+	var pos = [7.4, 6.8, 7.5, 7.6, 6.3, 6.5, 7, 7.5];
+	function hOver() { hover('h', 7.4) }
+	function eOver() { hover('e', 6.8) }
+	function aOver() { hover('a', 7.5) }
+	function dOver() { hover('d', 7.6) }
+	function lOver() { hover('l', 6.3) }
+	function eeOver() { hover('ee', 6.5) }
+	function sOver() { hover('s', 7) }
+	function ssOver() { hover('ss', 7.5) }
+
+	// window onload glitch animation
+	window.onload = function(){
+		hOver(); 
+		eOver();
+		aOver(); 
+		dOver(); 
+		lOver();
+		eeOver();
+		sOver();
+		ssOver();
+	}
+
+	document.addEventListener('touchstart', showCoordinates, false);
+	document.addEventListener('touchmove', showCoordinates, false);
+	function showCoordinates(event) {
+		var vertTouchArea = window.innerWidth/(letters.length+1);
+		var touchX = event.touches[0].clientX;
+	 	var touchY = event.touches[0].clientY;
+		if(touchX<(vertTouchArea*1)){
+			hOver();
+		}else if(touchX<(vertTouchArea*2)){
+			eOver();
+		}else if(touchX<(vertTouchArea*3)){
+			aOver();
+		}else if(touchX<(vertTouchArea*4)){
+			dOver();
+		}else if(touchX<(vertTouchArea*5)){
+			lOver();
+		}else if(touchX<(vertTouchArea*6)){
+			eeOver();
+		}else if(touchX<(vertTouchArea*7)){
+			sOver();
+		}else if(touchX<(vertTouchArea*8)){
+			ssOver();
+		}
+	  }
+}
+
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+	mobile();
+}else{
+	pc();
+}
+
+function mobile(){
+	// mobile grid 2x4
+	document.body.setAttribute('style','display:grid; grid-template-columns:1fr; grid-auto-rows:auto; margin:0px; padding:0px; overflow-x: hidden; position: relative;');
+
+
+	document.getElementById('logo-container').setAttribute('style', 'width:100%; height:100vh; display:grid; grid-column:1 / 2; grid-row:1 / 2; grid-template-columns:1fr; grid-template-rows:repeat(5, 1fr); position:fixed; mix-blend-mode:difference;');
+	document.getElementById('video-container').setAttribute('style', 'width:100%; height:100vh; display:grid; grid-column:1 / 2; grid-row:1 / 2; position:fixed;');
+
+
+	document.getElementById('logo-group').setAttribute('style', 'grid-column:1 / 2; grid-row:3 / 4; text-align:center;');
+	document.getElementById('glitch-group').setAttribute('style', 'display: grid; grid-column:1 / 2; grid-row:3 / 4; text-align:center;  overflow-x:hidden; ');
+	document.getElementById('glitch-ul').setAttribute('style', 'margin-top:3.95%; justify-self:center; overflow-x:hidden; overflow-y:hidden;');
+	document.getElementById('sensor-group').setAttribute('style', 'display: grid; grid-column:1 / 2; grid-row:3 / 4; text-align:center;');
+	document.getElementById('sensor-ul').setAttribute('style', 'margin-top:3.95%; justify-self:center; z-index:2;')
+
+	document.getElementById('image-container').setAttribute('style','width:100%; display:grid; grid-template-columns:100%; grid-template-rows:repeat(10, 25vh); z-index:1; ');
+
+
+	document.getElementById('menu').style.fontSize = '25px';
+	document.getElementById('info').addEventListener('click',textbox);
+	function textbox(){
+		var textbox = document.createElement('div');
+		textbox.setAttribute('id','textbox');
+		textbox.setAttribute('style',`display:grid; grid-column:1/2; grid-row:1/2; background: #ffffff; color:#000000; z-index:1000000; font-family: "HelveticaNeue-CondensedBold"; font-size:10px; width:33.3333vw; height:25vh; position: fixed; mix-blend-mode:difference; touch-action: none; user-select: none;`);
+		// textbox.setAttribute('style',`grid-column:1/2; grid-row:1/2; background: #ffffff; color:#000000; z-index:1000000; font-family: "HelveticaNeue-CondensedBold";  position:relative;`);
+		textbox.innerHTML = 'CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS'
+		document.body.appendChild(textbox);
+
+		var closebtn = document.createElement('span');
+		closebtn.setAttribute('style', 'color:#000000; position:absolute; font-size:20px; top:-8px; right:-4px; margin:0; padding:0; font-family:sans-serif;font-weight: lighter; cursor: default;');
+		closebtn.addEventListener('click',removeTxtbox);
+		closebtn.innerHTML = '☒';
+		document.getElementById('textbox').appendChild(closebtn);
+		
+		function removeTxtbox (){
+			document.getElementById('textbox').remove();
+		}
+
+		dragElement(document.getElementById("textbox"));
+
+		function dragElement(elmnt) {
+    		var container = document.body;
+		
+    		var active = false;
+    		var currentX;
+    		var currentY;
+    		var initialX;
+    		var initialY;
+    		var xOffset = 0;
+    		var yOffset = 0;
+		
+    		container.addEventListener("touchstart", dragStart, false);
+    		container.addEventListener("touchend", dragEnd, false);
+    		container.addEventListener("touchmove", drag, false);
+		
+    		container.addEventListener("mousedown", dragStart, false);
+    		container.addEventListener("mouseup", dragEnd, false);
+    		container.addEventListener("mousemove", drag, false);
+		
+    		function dragStart(e) {
+    			if (e.type === "touchstart") {
+    				initialX = e.touches[0].clientX - xOffset;
+    				initialY = e.touches[0].clientY - yOffset;
+    			} else {
+    				initialX = e.clientX - xOffset;
+    				initialY = e.clientY - yOffset;
+    			}
+		
+    			if (e.target === elmnt) {
+    				active = true;
+    			}
+    		}
+		
+    		function dragEnd(e) {
+    			initialX = currentX;
+    			initialY = currentY;
+		
+    			active = false;
+    		}
+		
+    		function drag(e) {
+    			if (active) {
+    		  
+    			e.preventDefault();
+    		  
+    		    	if (e.type === "touchmove") {
+    		    		currentX = e.touches[0].clientX - initialX;
+    		   			currentY = e.touches[0].clientY - initialY;
+    		    	} else {
+    		    		currentX = e.clientX - initialX;
+    		    		currentY = e.clientY - initialY;
+    		    	}
+		
+    		    	xOffset = currentX;
+    		    	yOffset = currentY;
+		
+    				setTranslate(currentX, currentY, elmnt);
+    			}
+    		}
+		
+    		function setTranslate(xPos, yPos, el) {
+    			el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+    		}
+    	}
+	}
+
+	var rows = 10;
+	var columns = 1;
+	var imageAmount = 10;
+	var initialOptions;
+	// initialOptions = [0,1,2,3,4,5,6,7,8,9,10,11];
+	initialOptions = [];
+	for(var i=0; i<(rows*columns); i+=1){ 
+		initialOptions.push(i) 
+	}
+	console.log(initialOptions);
+	var uniqueNumbers = [];
+	function chooseANumber(index){
+		var item = Math.floor(Math.random()*initialOptions.length)
+		var one = initialOptions[item];
+		initialOptions.splice(item, 1)
+		uniqueNumbers.push(one);
+		return uniqueNumbers;
+	}
+
+	for(var i=0; i<imageAmount; i+=1){
+		chooseANumber(initialOptions);
+	}
+
+	// console.log(uniqueNumbers);
+	function sort(index){
+		index.sort(function(a, b) {
+  			return a - b;
+		});
+		return index;
+	}
+	var sortedUniqueNumbers = sort(uniqueNumbers);
+	console.log( sortedUniqueNumbers );
+	
+	var position = [];
+	// rows 
+	
+	for(var i=0; i<rows; i+=1){
+		for(var j=0; j<columns; j+=1){
+			position.push([j+1,i+1]);
+		}
+	}
+
+	function layout(index){
+		console.log(sortedUniqueNumbers); 
+		// sortedUniqueNumbers = [1, 2, 3, 4];
+		var finalPos = [];
+		for(var i=0; i<sortedUniqueNumbers.length; i+=1){
+			var array = [];
+			array[0] = position[sortedUniqueNumbers[i]][0];
+			array[1] = position[sortedUniqueNumbers[i]][0]+1;
+			array[2] = position[sortedUniqueNumbers[i]][1];
+			array[3] = position[sortedUniqueNumbers[i]][1]+1;
+			finalPos.push(array)
+		}
+		return finalPos;
+	}
+	var imagePosition = layout();
+	console.log( imagePosition );
+
+	for(var i=0; i<10; i+=1){
+		var box = document.createElement('div');
+		box.setAttribute('id', 'box'+i);
+		box.setAttribute('class', 'boxes')
+		box.setAttribute('style', `display:grid; grid-column:${imagePosition[i][0]}/${imagePosition[i][1]}; grid-row:${imagePosition[i][2]}/${imagePosition[i][3]}; mix-blend-mode:difference;`);
+		document.getElementById('image-container').appendChild(box);
+
+		var image = document.createElement('img');
+		image.setAttribute('src', `https://eddiedohyunkim.github.io/shayneoliver/assets/image/headless/images/headless${i+1}.jpg`);
+		image.setAttribute('style', 'grid-row:1/2; grid-column:1/2; height:25vh; ');
+		image.setAttribute('id', 'image'+i)
+		image.setAttribute('class', 'images');
+		document.getElementById('box'+i).appendChild(image);
+	}
+
+	function fitHorizontalImg(id){
+		var h = document.getElementById(id).clientHeight;
+		var w = document.getElementById(id).clientWidth;
+		
+		if(w<h){
+			document.getElementById(id).setAttribute('style', 'height:100%;');
+		}else{
+			document.getElementById(id).setAttribute('style', 'width:100%;');
+		}
+	}
+	/**************************image glitch effect**************************/
+
+	// imageGlitch('colmar_rep','motherbox1',frame1,frame1justify,'motherbox1a','colmarglitch','colmar.html');
+	// imageGlitch('diesel_rep','motherbox2',frame2,frame2justify,'motherbox2a','dieselglitch','diesel.html');
+	// imageGlitch('helmutlang_rep','motherbox3',frame3,frame3justify,'motherbox3a','helmutlangglitch','helmutlang.html');
+	// imageGlitch('hoodbyair_rep','motherbox4',frame4,frame4justify,'motherbox4a','hoodbyairglitch','hoodbyair.html');
+	imageGlitch('0');
+	imageGlitch('1');
+	imageGlitch('2');
+	imageGlitch('3');
+	imageGlitch('4');
+	imageGlitch('5');
+	imageGlitch('6');
+	imageGlitch('7');
+	imageGlitch('8');
+	imageGlitch('9');
+
+	var divide = Math.floor(Math.random()*5)+10;
+	
+		
+	function imageGlitch(number){	
+	// function imageGlitch(imageId,motherboxId1,frameNo,frameNojustify,motherboxId2,glitchId,link){
+		var imageWait = document.getElementById('image'+number);
+		imageWait.addEventListener("load", loadGlitch, false);
+
+		function loadGlitch(){
+			// fitHorizontalImg();
+			var imgWidth = document.getElementById('image'+number).clientWidth;
+			var imgHeight = document.getElementById('image'+number).clientHeight;
+			var w;
+			var h;
+			h = '25vh';
+			(imgWidth<imgHeight) ? w = ((imgHeight / imgWidth)*100)/4+'vw' : w = ((imgWidth / imgHeight)*100)/1.75+'vw';
+			
+
+			//create a div on top of picture
+			var motherbox = document.createElement('div');
+			motherbox.setAttribute('id','motherbox'+number)
+			motherbox.setAttribute('style','grid-row:1/2; grid-column:1/2; width:'+w+'; height:'+h+'; display: grid; grid-template-columns:repeat('+divide+', 1fr); grid-template-rows:repeat('+divide+', 1fr);');
+			document.getElementById('box'+number).appendChild(motherbox);
+
+			
+			// fade in black box
+			var blackbox = document.createElement('div');
+			blackbox.setAttribute('id', 'blackbox'+number)
+			blackbox.setAttribute('style','grid-row:1/2; grid-column:1/2; width:'+w+'; height:'+h+'; opacity:100%; z-index:10; background-color:#000000;');
+			document.getElementById('box'+number).appendChild(blackbox);
+
+			// var touchbox = document.createElement('div');
+			// touchbox.setAttribute('style','grid-column:'+frameNo[0]+' / '+frameNo[1]+'; grid-row:'+frameNo[2]+' / '+frameNo[3]+'; width:'+w+'; height:'+h+';  justify-self:'+frameNojustify+';  opacity:100%; z-index:100;  background-color:#ffffff00;' );
+			// touchbox.setAttribute('onclick',`window.location="https://eddiedohyunkim.github.io/shayneoliver/${link}";`);
+			// document.body.appendChild(touchbox);
+
+			var increase = 0;
+			var eraseMotherbox = setInterval(function(){
+				increase++;
+				var reduce = 100/33.3333;
+				document.getElementById('blackbox'+number).style.opacity = 100-(increase*reduce)+'%';
+				if(increase === 60){ 
+					clearInterval(eraseMotherbox);
+					document.getElementById('blackbox'+number).remove();
+				}
+			}, 25);
+
+			var divideX2 = divide * divide;
+			// ****** window.onload GLITCH
+			for(var i=0; i<divideX2; i+=1){
+				var glitchchildren = document.createElement('div');
+				glitchchildren.setAttribute('id', 'image'+number+'glitch'+i);
+				glitchchildren.setAttribute('style','width:100%; height:100%; background-color:#ffffff; opacity:0%; z-index:10; mix-blend-mode:difference;' );
+				document.getElementById('motherbox'+number).appendChild(glitchchildren);
+				(function(index1){
+					var duration = 60;
+					var sn = 0;
+					var color = ['#ffffff','#ffffff00'];
+					var interval = setInterval(function(){
+						sn++;
+						document.getElementById('image'+number+'glitch'+index1).style.backgroundColor = color[Math.floor(Math.random()*color.length)];
+						document.getElementById('image'+number+'glitch'+index1).style.opacity = 100+'%';
+						document.getElementById('image'+number+'glitch'+index1).style.mixBlendMode = 'difference';
+						if(sn === duration){ 
+							clearInterval(interval);
+							document.getElementById('image'+number+'glitch'+index1).style.opacity = 0+'%';
+						}
+					}, Math.floor(Math.random()*20)+10);
+				})(i);
+			}//end of window.onload GLITCH
+
+			// //****** touchGlitch
+			function touchGlitch(event) {
+				for(var i=0; i<divideX2; i+=1){
+					(function(index1){
+						var duration = 40;
+						var sn = 0;
+						var color = ['#ffffff','#ffffff00'];
+						var interval = setInterval(function(){
+							sn++;
+							document.getElementById('image'+number+'glitch'+index1).style.backgroundColor = color[Math.floor(Math.random()*color.length)];
+							document.getElementById('image'+number+'glitch'+index1).style.opacity = 100+'%';
+							document.getElementById('image'+number+'glitch'+index1).style.mixBlendMode = 'difference';
+							if(sn === duration){ 
+								clearInterval(interval);
+								document.getElementById('image'+number+'glitch'+index1).style.opacity = 0+'%';
+							}
+						}, Math.floor(Math.random()*30)+10);
+					})(i);
+				}
+			}//end of touchGlitch()
+			document.addEventListener('touchstart', showCoordinates, false);
+			function showCoordinates(event) {
+				var imgPos = document.getElementById('image'+number).getBoundingClientRect();
+				var touchX = event.touches[0].clientX;
+				var touchY = event.touches[0].clientY;
+				console.log(touchX + ", " + touchY);
+				if(imgPos.top<touchY && touchY<imgPos.bottom){
+					touchGlitch();
+				}
+			}//end of showCoordinates()
+		}//end of loadGlitch()
+	}//end of imageGlitch()	
+} //end of mobile()
+
+
+function pc(){
+	// pc grid 4x2
+	document.body.setAttribute('style','display:grid; grid-template-columns: 100%; grid-auto-rows:auto; overflow-x:hidden;');
+	document.getElementById('logo-container').setAttribute('style', 'width:100%; height:100vh; display:grid; grid-column:1 / 2; grid-row:1 / 2; grid-template-columns:1fr; grid-template-rows:repeat(5, 1fr); position:fixed; mix-blend-mode:difference;');  
+
+	document.getElementById('video-container').setAttribute('style', 'width:100%; height:100vh; display:grid; grid-column:1 / 2; grid-row:1 / 2; position:fixed;');
+	document.getElementById('glitch-ul').setAttribute('style', 'margin-top:3.7%; justify-self:center; overflow-x:hidden; overflow-y:hidden;');
+
+
+	document.getElementById('image-container').setAttribute('style','width:100vw; display:grid; grid-template-columns:repeat(6, 16.6666vw); grid-template-rows:repeat(3, 50vh); z-index:1; ');
+
+	// movable textbox
+	document.getElementById('info').addEventListener('click',textbox);
+	function textbox(){
+		// document.getElementById('info').stle.color ='red';
+		var textbox = document.createElement('div');
+		textbox.setAttribute('id','textbox');
+		textbox.setAttribute('style',`background: #ffffff; color:#000000; z-index:2; font-family: "HelveticaNeue-CondensedBold"; font-size:15px; width:17vw; height:33.3333vh; cursor: move; position: fixed; mix-blend-mode:difference; padding:6px 6px 5px 9px;`);
+		textbox.innerHTML = 'CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS CREDITS'
+		document.body.appendChild(textbox);
+
+		var closebtn = document.createElement('span');
+		closebtn.setAttribute('style', 'color:#000000; position:absolute; font-size:30px; top:-10px; right:-4px; margin:0; padding:0; font-family:sans-serif;font-weight: lighter; cursor: default;');
+		closebtn.addEventListener('click',removeTxtbox);
+		closebtn.innerHTML = '☒';
+		document.getElementById('textbox').appendChild(closebtn);
+		
+		function removeTxtbox (){
+			document.getElementById('textbox').remove();
+		}
+
+		dragElement(document.getElementById("textbox"));
+		function dragElement(elmnt) {
+			var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+			if (document.getElementById(elmnt.id + "header")) {
+				/* if present, the header is where you move the DIV from:*/
+				document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+			}else{
+				/* otherwise, move the DIV from anywhere inside the DIV:*/
+				elmnt.onmousedown = dragMouseDown;
+			}
+		
+			function dragMouseDown(e) {
+				e = e || window.event;
+				e.preventDefault();
+				// get the mouse cursor position at startup:
+				pos3 = e.clientX;
+				pos4 = e.clientY;
+				document.onmouseup = closeDragElement;
+				// call a function whenever the cursor moves:
+				document.onmousemove = elementDrag;
+			}
+		
+			function elementDrag(e) {
+				e = e || window.event;
+				e.preventDefault();
+				// calculate the new cursor position:
+				pos1 = pos3 - e.clientX;
+				pos2 = pos4 - e.clientY;
+				pos3 = e.clientX;
+				pos4 = e.clientY;
+				// set the element's new position:
+				elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+				elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+			}
+		
+			function closeDragElement() {
+				/* stop moving when mouse button is released:*/
+				document.onmouseup = null;
+				document.onmousemove = null;
+			}
+		}// end of dragElement()
+	}// end of textbox()
+
+	
+
+	var rows = 3;
+	var columns = 6;
+	var imageAmount = 10;
+	var initialOptions;
+	// initialOptions = [0,1,2,3,4,5,6,7,8,9,10,11];
+	initialOptions = [];
+	for(var i=0; i<(rows*columns); i+=1){ 
+		initialOptions.push(i) 
+	}
+	console.log(initialOptions);
+	var uniqueNumbers = [];
+	function chooseANumber(index){
+		var item = Math.floor(Math.random()*initialOptions.length)
+		var one = initialOptions[item];
+		initialOptions.splice(item, 1)
+		uniqueNumbers.push(one);
+		return uniqueNumbers;
+	}
+
+	for(var i=0; i<imageAmount; i+=1){
+		chooseANumber(initialOptions);
+	}
+
+	// console.log(uniqueNumbers);
+	function sort(index){
+		index.sort(function(a, b) {
+  			return a - b;
+		});
+		return index;
+	}
+	var sortedUniqueNumbers = sort(uniqueNumbers);
+	console.log( sortedUniqueNumbers );
+	
+	var position = [];
+	// rows 
+	
+	for(var i=0; i<rows; i+=1){
+		for(var j=0; j<columns; j+=1){
+			position.push([j+1,i+1]);
+		}
+	}
+
+	function layout(index){
+		console.log(sortedUniqueNumbers); 
+		// sortedUniqueNumbers = [1, 2, 3, 4];
+		var finalPos = [];
+		for(var i=0; i<sortedUniqueNumbers.length; i+=1){
+			var array = [];
+			array[0] = position[sortedUniqueNumbers[i]][0];
+			array[1] = position[sortedUniqueNumbers[i]][0]+1;
+			array[2] = position[sortedUniqueNumbers[i]][1];
+			array[3] = position[sortedUniqueNumbers[i]][1]+1;
+			finalPos.push(array)
+		}
+		return finalPos;
+	}
+	var imagePosition = layout();
+	console.log( imagePosition );
+
+	for(var i=0; i<10; i+=1){
+		var box = document.createElement('div');
+		box.setAttribute('id', 'box'+i);
+		box.setAttribute('class', 'boxes')
+		box.setAttribute('style', `display:grid; grid-column:${imagePosition[i][0]}/${imagePosition[i][1]}; grid-row:${imagePosition[i][2]}/${imagePosition[i][3]}; mix-blend-mode:difference;`);
+		document.getElementById('image-container').appendChild(box);
+
+		var image = document.createElement('img');
+		image.setAttribute('src', `https://eddiedohyunkim.github.io/shayneoliver/assets/image/headless/images/headless${i+1}.jpg`);
+		image.setAttribute('style', 'grid-row:1/2; grid-column:1/2; width:100%; opacity:100%; mix-blend-mode:difference; ');
+		image.setAttribute('id', 'image'+i)
+		image.setAttribute('class', 'images');
+		document.getElementById('box'+i).appendChild(image);
+	}
+
+	function fitHorizontalImg(id){
+		var h = document.getElementById(id).clientHeight;
+		var w = document.getElementById(id).clientWidth;
+		
+		if(w<h){
+			document.getElementById(id).setAttribute('style', 'height:100%;');
+		}else{
+			document.getElementById(id).setAttribute('style', 'width:100%;');
+		}
+	}
+
+	/**************************IMAGE GLITCH**************************/
+	imageGlitch('0');
+	imageGlitch('1');
+	imageGlitch('2');
+	imageGlitch('3');
+	imageGlitch('4');
+	imageGlitch('5');
+	imageGlitch('6');
+	imageGlitch('7');
+	imageGlitch('8');
+	imageGlitch('9');
+	// imageGlitch('diesel_rep','motherbox2',frame2,frame2justify,'motherbox2a','dieselglitch','diesel.html');
+	// imageGlitch('helmutlang_rep','motherbox3',frame3,frame3justify,'motherbox3a','helmutlangglitch','helmutlang.html');
+	// imageGlitch('hoodbyair_rep','motherbox4',frame4,frame4justify,'motherbox4a','hoodbyairglitch','hoodbyair.html');
+
+	var divide = Math.floor(Math.random()*8)+8;
+	// var divide = 3;
+	// function imageGlitch(imageId,boxId,frameNo,frameNojustify,motherboxId2,glitchId,link){
+	function imageGlitch(number){
+		
+		var imageWait = document.getElementById('image'+number);
+		imageWait.addEventListener("load", loadGlitch, false);
+
+		function loadGlitch(){
+			// fitHorizontalImg('image'+number);
+			//get colmar width,height,and position
+			var imgWidth = document.getElementById('image'+number).clientWidth;
+			var imgHeight = document.getElementById('image'+number).clientHeight;
+			var w;
+			var h;
+			w = 100+'%';
+			h = ((imgHeight / imgWidth)*100)/6+'vw';
+
+			//create a div on top of picture
+			var motherbox = document.createElement('div');
+			motherbox.setAttribute('id','motherbox'+number)
+			motherbox.setAttribute('style','grid-row:1/2; grid-column:1/2; width:'+w+'; height:'+h+'; display: grid; grid-template-columns:repeat('+divide+', 1fr); grid-template-rows:repeat('+divide+', 1fr);');
+			document.getElementById('box'+number).appendChild(motherbox);
+
+
+			var divideX2 = divide*divide;
+			// fade in black box
+			var blackbox = document.createElement('div');
+			blackbox.setAttribute('id', 'blackbox'+number)
+			blackbox.setAttribute('style','grid-row:1/2; grid-column:1/2; width:'+w+'; height:'+h+'; opacity:100%; z-index:10; background-color:#000000;');
+			document.getElementById('box'+number).appendChild(blackbox);
+			var increase = 0;
+			var eraseMotherbox = setInterval(function(){
+				increase++;
+				var reduce = 100/33.3333;
+				document.getElementById('blackbox'+number).style.opacity = 100-(increase*reduce)+'%';
+				if(increase === 60){ 
+					clearInterval(eraseMotherbox);
+					document.getElementById('blackbox'+number).remove();
+				}
+			}, 25);
+			
+			//****** window.onload GLITCH
+			for(var i=0; i<divideX2; i+=1){
+				(function(index1){
+					var duration = 60;
+					var sn = 0;
+					var color = ['#ffffff','#ffffff00'];
+					var interval = setInterval(function(){
+						sn++;
+						document.getElementById('image'+number+'glitch'+index1).style.backgroundColor = color[Math.floor(Math.random()*color.length)];
+						document.getElementById('image'+number+'glitch'+index1).style.opacity = 100+'%';
+						document.getElementById('image'+number+'glitch'+index1).style.mixBlendMode = 'difference';
+						if(sn === duration){ 
+							clearInterval(interval);
+							document.getElementById('image'+number+'glitch'+index1).style.opacity = 0+'%';
+						}
+					}, Math.floor(Math.random()*20)+10);
+				})(i);
+			}//end of window.onload GLITCH
+			
+			//****** CURSOR GLITCH
+			for(var i=0; i<divideX2; i+=1){
+				//colmar 
+				var glitchchildren = document.createElement('div');
+				glitchchildren.setAttribute('id', 'image'+number+'glitch'+i);
+				glitchchildren.setAttribute('style','width:100%; height:100%; background-color:#ffffff; opacity:0%; z-index:10; mix-blend-mode:difference;' );
+				// glitchchildren.addEventListener('click', function() {window.location=`https://eddiedohyunkim.github.io/shayneoliver/${link}`});
+				document.getElementById('motherbox'+number).appendChild(glitchchildren);
+				(function(number1){
+					var duration2 = 70;
+					var color = ['#ffffff','#ffffff00'];
+					var getglitchchildren = document.getElementById('image'+number+'glitch' + i);
+					getglitchchildren.onmouseover = function mosaicGlitch(){
+						var sn = 0;
+						var interval = setInterval(function(){
+							sn++;
+							document.getElementById('image'+number+'glitch'+number1).style.backgroundColor = color[Math.floor(Math.random()*color.length)];
+							document.getElementById('image'+number+'glitch'+number1).style.opacity = 100+'%';
+							if(sn === duration2){ 
+								clearInterval(interval);
+								document.getElementById('image'+number+'glitch'+number1).style.opacity = 0+'%';
+							}
+						}, Math.floor(Math.random()*20)+10);
+					}
+				})(i);
+			}//end of CURSOR GLITCH
+		};//end of loadGlitch()
+	}//end of imageGLitch()
+} //end of pc()
+</script>
+</html>
+

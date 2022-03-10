@@ -1,0 +1,248 @@
+<!DOCTYPE>
+<style>													
+			/*html, body, div, span, applet, object, iframe,
+			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+			a, abbr, acronym, address, big, cite, code,
+			del, dfn, em, img, ins, kbd, q, s, samp,
+			small, strike, strong, sub, sup, tt, var,
+			b, u, i, center,
+			dl, dt, dd, ol, ul, li,
+			fieldset, form, label, legend,
+			table, caption, tbody, tfoot, thead, tr, th, td,
+			article, aside, canvas, details, embed, 
+			figure, figcaption, footer, header, hgroup, 
+			menu, nav, output, ruby, section, summary,
+			time, mark, audio, video {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-size: 100%;
+				font: inherit;
+				vertical-align: baseline;
+			}*/
+			html,body{margin:0px; padding:0px; width:100%; height:100vh;}
+	@font-face{
+  		font-family: "HelveticaNeue-CondensedBold";
+		src:url('https://static1.squarespace.com/static/61687204ef3b4832a6d15935/t/61c3bbcd70a5ef44633df058/1640217549766/helvetica_condensed.ttf');
+	}
+	.logo, .glitch{
+		font-family: "HelveticaNeue-CondensedBold";
+		font-size:14.2vw;
+		/*background-color: green;*/
+	}
+	ul{
+		display: inline-block;
+		list-style-type: none;
+        margin: 0;
+        padding: 0;
+         /*For IE, the outcast */
+        zoom:1;
+	}
+	li {
+  		float: left;
+	}
+	li a {
+		display: block;
+		text-decoration: none;
+
+	}
+	.glitch{
+		/*background-color: green;*/
+		height: 10.2vw;
+	}
+	.sensor{
+		/*outline: 1px dashed red;*/
+  		/*outline-offset: -1px;*/
+		height: 10.2vw;
+	}
+
+</style>
+<body >
+	<div id='logo-container'>
+		<div id='logo-group'>
+			<ul>
+				<li><a class='logo' id='a'>A</a></li>
+				<li><a class='logo' id='n'>N</a></li>
+				<li><a class='logo' id='o'>O</a></li>
+				<li><a class='logo' id='nn'>N</a></li>
+				<li><a class='logo' id='y'>Y</a></li>
+				<li><a class='logo' id='m'>M</a></li>
+				<li><a class='logo' id='oo'>O</a></li>
+				<li><a class='logo' id='u'>U</a></li>
+				<li><a class='logo' id='s'>S</a></li>
+				<li><a class='logo' id='c'>C</a></li>
+				<li><a class='logo' id='l'>L</a></li>
+				<li><a class='logo' id='uu'>U</a></li>										
+				<li><a class='logo' id='b'>B</a></li>
+			</ul>
+		</div>
+		<div id='glitch-group'>
+			<ul id = 'glitch-ul'>
+				<li><a class='glitch' id='aglitch'></a></li>
+				<li><a class='glitch' id='nglitch'></a></li>
+				<li><a class='glitch' id='oglitch'></a></li>
+				<li><a class='glitch' id='nnglitch'></a></li>
+				<li><a class='glitch' id='yglitch'></a></li>
+				<li><a class='glitch' id='mglitch'></a></li>
+				<li><a class='glitch' id='ooglitch'></a></li>
+				<li><a class='glitch' id='uglitch'></a></li>
+				<li><a class='glitch' id='sglitch'></a></li>
+				<li><a class='glitch' id='cglitch'></a></li>
+				<li><a class='glitch' id='lglitch'></a></li>
+				<li><a class='glitch' id='uuglitch'></a></li>							
+				<li><a class='glitch' id='bglitch'></a></li>										
+			</ul>
+		</div>
+		<div id='sensor-group'>
+			<ul id = 'sensor-ul'>
+				<li><a class='sensor' id='asensor'></a></li>
+				<li><a class='sensor' id='nsensor'></a></li>
+				<li><a class='sensor' id='osensor'></a></li>
+				<li><a class='sensor' id='nnsensor'></a></li>
+				<li><a class='sensor' id='ysensor'></a></li>
+				<li><a class='sensor' id='msensor'></a></li>
+				<li><a class='sensor' id='oosensor'></a></li>
+				<li><a class='sensor' id='usensor'></a></li>
+				<li><a class='sensor' id='ssensor'></a></li>
+				<li><a class='sensor' id='csensor'></a></li>
+				<li><a class='sensor' id='lsensor'></a></li>
+				<li><a class='sensor' id='uusensor'></a></li>										
+				<li><a class='sensor' id='bsensor'></a></li>										
+			</ul>
+		</div>
+	</div>
+</body>
+<script>
+
+	document.body.setAttribute('style', 'display:grid; grid-template-columns:100%; grid-template-rows:100%; overflow-x:hidden;')
+	document.getElementById('logo-container').setAttribute('style', 'width:100%; height:100%; display:grid; grid-column:1 / 2; grid-row:1 / 2; grid-template-columns:1fr; grid-template-rows:repeat(5, 1fr);');
+	document.getElementById('logo-group').setAttribute('style', 'grid-column:1 / 2; grid-row:3 / 4; text-align:center; background-color:white;');
+	document.querySelector('ul').setAttribute('style', 'list-style-type:none;');
+
+	var pos = [7.4, 7.6, 7.3, 7.7, 6.9, 9.9, 7.4, 7.2, 10.1, 7.1, 6.1, 7.1, 7];
+	var letters = ['a','n', 'o', 'nn', 'y', 'm', 'oo', 'u', 's', 'c', 'l', 'uu', 'b'];
+	for (var i=0; i<letters.length; i+=1){
+		document.getElementById(letters[i]).style.width = pos[i]+'vw';
+
+	}
+	// document.getElementById('a').style.backgroundColor = 'red';
+	// document.getElementById('b').style.backgroundColor = 'red';
+	// glitch box
+	document.getElementById('glitch-group').setAttribute('style', 'display: grid; grid-column:1 / 2; grid-row:3 / 4; text-align:center;  background-color:#ffffff00; overflow-x:hidden;');
+	document.getElementById('glitch-ul').setAttribute('style', 'margin-top:3.73%; justify-self:center; overflow-x:hidden; overflow-y:hidden;')
+
+	// var glitches = ['sglitch','hglitch', 'aglitch', 'yglitch', 'nglitch', 'eglitch', 'oglitch', 'lglitch', 'iglitch', 'vglitch', 'eeglitch', 'rglitch'];
+	for (var i=0; i<letters.length; i+=1){
+		document.getElementById(`${letters[i]}glitch`).setAttribute('style', 'width:'+pos[i]+'vw; mix-blend-mode:difference;')
+	}
+
+	// sensor box
+	document.getElementById('sensor-group').setAttribute('style', 'display: grid; grid-column:1 / 2; grid-row:3 / 4; text-align:center;  background-color:#ffffff00; ')
+	document.getElementById('sensor-ul').setAttribute('style', 'margin-top:3.73%; justify-self:center; z-index:2;')
+
+	for (var i=0; i<letters.length; i+=1){
+		document.getElementById(`${letters[i]}sensor`).setAttribute('style', 'width:'+pos[i]+'vw; background-color:#ffffff00; ')
+		document.getElementById(`${letters[i]}sensor`).setAttribute('onmouseover',letters[i]+'Over()');
+		// document.getElementById(`${letters[i]}sensor`).setAttribute('onclick','window.location="https://eddiedohyunkim.github.io/shayneoliver/overview.html";');
+	}
+	document.getElementById('s').style.textAlign = 'start';
+
+	var color = ['#ffffff','#000000'];
+	var hgduration = 70;
+	var gwidth = 10;
+
+	function hover(letter, w){
+		var sn = 0;
+		var interval = setInterval(function(){
+			sn++;
+			document.getElementById(letter).style.color = color[Math.floor(Math.random()*color.length)];
+			document.getElementById(letter+'glitch').style.backgroundColor = color[Math.floor(Math.random()*color.length)];
+			document.getElementById(letter+'glitch').style.height = Math.floor(Math.random()*11)+'vw';
+			document.getElementById(letter+'glitch').style.width = Math.floor(Math.random()*gwidth)+'vw';
+			if(sn === hgduration){ 
+   				clearInterval(interval);
+   				document.getElementById(letter).style.color = '#000000';
+   				document.getElementById(letter+'glitch').style.backgroundColor = '#ffffff00';
+   				document.getElementById(letter+'glitch').style.width = w+'vw';
+   				document.getElementById(letter+'glitch').style.height = 10.2+'vw';
+
+   			}
+		}, Math.floor(Math.random()*20)+10);
+	}
+	var pos = [7.4, 7.6, 7.3, 7.7, 6.9, 9.9, 7.4, 7.2, 10.1, 7.1, 6.1, 7.1, 7];
+	function aOver() { hover('a', 7.4) }
+	function nOver() { hover('n', 7.6) }
+	function oOver() { hover('o', 7.3) }
+	function nnOver() { hover('nn', 7.7) }
+	function yOver() { hover('y', 6.9) }
+	function mOver() { hover('m', 9.9) }
+	function ooOver() { hover('oo', 7.4) }
+	function uOver() { hover('u', 7.2) }
+	function sOver() { hover('s', 10.1) }
+	function cOver() { hover('c', 7.1) }
+	function lOver() { hover('l', 6.1) }
+	function uuOver() { hover('uu', 7.1) }
+	function bOver() { hover('b', 7) }
+
+	// window onload glitch animation
+	window.onload = function(){
+		var logoFunctions = {
+			1: function(){aOver();}, 
+			2: function(){nOver();},
+			3: function(){oOver();}, 
+			4: function(){nnOver();}, 
+			5: function(){yOver();}, 
+			6: function(){mOver();}, 
+			7: function(){ooOver();}, 
+			8: function(){uOver();}, 
+			9: function(){sOver();}, 
+			10: function(){cOver();}, 
+			11: function(){lOver();},
+			12: function(){uuOver();},
+			13: function(){bOver();}
+		};
+		var different = Math.floor(Math.random()*8)+5
+		for(var i=1; i<26; i+=1){
+			var j = Math.floor(Math.random()*13)+1
+			logoFunctions[j]();
+		}
+	}
+
+	document.addEventListener('touchstart', showCoordinates, false);
+	document.addEventListener('touchmove', showCoordinates, false);
+	function showCoordinates(event) {
+		var vertTouchArea = window.innerWidth/(letters.length);
+		var touchX = event.touches[0].clientX;
+	 	var touchY = event.touches[0].clientY;
+		if(touchX<vertTouchArea*1){
+			aOver();
+		}else if(touchX<(vertTouchArea*2)){
+			nOver();
+		}else if(touchX<(vertTouchArea*3)){
+			oOver();
+		}else if(touchX<(vertTouchArea*4)){
+			nnOver();
+		}else if(touchX<(vertTouchArea*5)){
+			yOver();
+		}else if(touchX<(vertTouchArea*6)){
+			mOver();
+		}else if(touchX<(vertTouchArea*7)){
+			ooOver();
+		}else if(touchX<(vertTouchArea*8)){
+			uOver();
+		}else if(touchX<(vertTouchArea*9)){
+			sOver();
+		}else if(touchX<(vertTouchArea*10)){
+			cOver();
+		}else if(touchX<(vertTouchArea*11)){
+			lOver();
+		}else if(touchX<(vertTouchArea*12)){
+			uuOver();
+		}else if(touchX<(vertTouchArea*13)){
+			bOver();
+		}
+	  	// console.log(touchX + ", " + touchY);
+	  }
+	
+
+</script>
